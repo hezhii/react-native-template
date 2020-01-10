@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   text: {
-    marginVertical: 24,
+    marginTop: 16,
+    marginBottom: 24,
     fontSize: 18,
   },
   button: {
