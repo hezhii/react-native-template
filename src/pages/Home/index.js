@@ -1,14 +1,16 @@
 import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
-import userThemeContext from '../../hooks/userThemeContext'
+import useThemeContext from '../../hooks/useThemeContext'
+import useStatusBar from '../../hooks/useStatusBar'
 import { addTheme } from '../../theme'
 
 const Home = props => {
   const { navigation } = props
-  const { theme, themeName, changeTheme } = userThemeContext()
+  const { theme, themeName, changeTheme } = useThemeContext()
   const brandPrimary = theme.colors.brand_primary
 
+  useStatusBar(navigation, 'light-content')
   const onSwitchTheme = () => {
     if (themeName === 'default') {
       addTheme('red', {
