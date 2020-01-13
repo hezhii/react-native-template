@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar translucent backgroundColor={theme.colors.brand_primary} />
+      <StatusBar translucent backgroundColor="transparent" />
       <Navigator />
     </>
   )

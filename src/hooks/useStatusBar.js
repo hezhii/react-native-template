@@ -7,6 +7,8 @@ const useStatusBar = (navigation, barStyle) => {
       StatusBar.setBarStyle(barStyle)
     }
 
+    StatusBar.setBarStyle(barStyle)
+
     const listener = navigation.addListener('willFocus', onWillFocus)
 
     return () => listener.remove()

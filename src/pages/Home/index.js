@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import useThemeContext from '../../hooks/useThemeContext'
 import useStatusBar from '../../hooks/useStatusBar'
 import { addTheme } from '../../theme'
+import Button from '../../components/Button'
 
 const Home = props => {
   const { navigation } = props
@@ -33,11 +34,7 @@ const Home = props => {
           </Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={onSwitchTheme}>
-        <View style={[styles.button, { backgroundColor: brandPrimary }]}>
-          <Text style={styles.buttonText}>Switch Theme</Text>
-        </View>
-      </TouchableOpacity>
+      <Button onPress={onSwitchTheme}>Switch Theme</Button>
     </View>
   )
 }
@@ -53,15 +50,5 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 24,
     fontSize: 18,
-  },
-  button: {
-    height: 44,
-    borderRadius: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 15,
   },
 })
