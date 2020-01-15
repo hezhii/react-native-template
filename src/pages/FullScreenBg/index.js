@@ -2,18 +2,20 @@ import React from 'react'
 import { StyleSheet, Text, ImageBackground } from 'react-native'
 import { useHeaderHeight } from 'react-navigation-stack'
 
-const Second = () => {
+const FullScreenBg = () => {
   const headerHeight = useHeaderHeight()
   return (
     <ImageBackground
       style={[styles.container, { paddingTop: headerHeight }]}
-      source={require('../../assets/img/bg.jpg')}>
+      source={require('../../assets/img/bg.jpg')}
+      resizeMode="cover">
       <Text style={styles.text}>I have a full screen background image</Text>
     </ImageBackground>
   )
 }
 
-Second.navigationOptions = {
+FullScreenBg.navigationOptions = {
+  title: 'Full screen background',
   headerTransparent: true,
 }
 
@@ -31,4 +33,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Second
+export default FullScreenBg

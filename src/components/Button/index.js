@@ -29,7 +29,9 @@ export default ({ children, onPress, style, disabled, loading }) => {
           style,
         ]}>
         {loading && <ActivityIndicator style={styles.loading} />}
-        <Text style={styles.buttonText}>{children}</Text>
+        <Text style={[styles.buttonText, { color: theme.colors.btn_text }]}>
+          {children}
+        </Text>
       </View>
     </TouchableOpacity>
   )
@@ -47,7 +49,6 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   buttonText: {
-    color: '#fff',
     fontSize: 16,
     fontWeight: '500',
   },

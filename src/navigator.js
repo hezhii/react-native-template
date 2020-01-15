@@ -13,7 +13,7 @@ import TabbarIcon from './components/TabbarIcon'
 
 import Home from './pages/Home'
 import My from './pages/My'
-import Second from './pages/Second'
+import FullScreenBg from './pages/FullScreenBg'
 
 export default function configNavigator({ colors }) {
   const defaultStackOptions = {
@@ -23,7 +23,7 @@ export default function configNavigator({ colors }) {
       borderBottomWidth: 0,
       elevation: 0,
       shadowOpacity: 0,
-      backgroundColor: colors.brand_primary,
+      backgroundColor: colors.header_bg,
     },
     headerTintColor: colors.header_tint_color,
     headerTitleStyle: {
@@ -38,6 +38,9 @@ export default function configNavigator({ colors }) {
     headerPressColorAndroid: 'transparent', // 安卓点击返回按钮时的反馈颜色
     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS, // 切换时水平切换
     headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
+    cardStyle: {
+      backgroundColor: colors.page_bg,
+    },
   }
 
   const MainTab = createBottomTabNavigator(
@@ -55,6 +58,10 @@ export default function configNavigator({ colors }) {
       tabBarOptions: {
         inactiveTintColor: colors.text_color_secondary,
         activeTintColor: colors.brand_primary,
+        style: {
+          borderTopWidth: 0,
+          backgroundColor: colors.tabbar_bg,
+        },
       },
     },
   )
@@ -73,7 +80,7 @@ export default function configNavigator({ colors }) {
           }
         },
       },
-      Second,
+      FullScreenBg,
     },
     {
       defaultNavigationOptions: defaultStackOptions,

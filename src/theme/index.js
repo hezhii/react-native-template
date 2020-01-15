@@ -9,9 +9,11 @@
 import React, { useState } from 'react'
 
 import defaultTheme from './default'
+import dark from './dark'
 
 const themes = {
   default: defaultTheme,
+  dark,
 }
 
 export const addTheme = (key, value) => (themes[key] = value)
