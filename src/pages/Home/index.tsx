@@ -5,7 +5,7 @@ import useThemeContext from '../../hooks/useThemeContext'
 import useStatusBar from '../../hooks/useStatusBar'
 import Button from '../../components/Button'
 
-const Home = props => {
+const Home = (props: any) => {
   const { navigation } = props
   const { themeName, theme, changeTheme } = useThemeContext()
 

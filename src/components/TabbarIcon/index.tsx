@@ -1,12 +1,19 @@
 import React from 'react'
 import { StyleSheet, Image } from 'react-native'
 
-const IMAGES = {
+const IMAGES: any = {
   Home: require('../../assets/icons/home.png'),
   My: require('../../assets/icons/my.png'),
 }
 
-const TabbarIcon = ({ routeName, tintColor }) => {
+interface Props {
+  focused: boolean
+  tintColor?: string
+  horizontal?: boolean
+  routeName: string
+}
+
+const TabbarIcon = React.memo(({ routeName, tintColor }: Props) => {
   return (
     <Image
       source={IMAGES[routeName]}
@@ -14,7 +21,7 @@ const TabbarIcon = ({ routeName, tintColor }) => {
       resizeMode="contain"
     />
   )
-}
+})
 
 const styles = StyleSheet.create({
   image: {

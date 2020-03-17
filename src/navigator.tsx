@@ -10,13 +10,14 @@ import { createBottomTabNavigator } from 'react-navigation-tabs'
 import { HEADER_HEIGHT, STATUS_BAR_HEIGHT } from './utils/device'
 import HeaderBackImage from './components/HeaderBackImage'
 import TabbarIcon from './components/TabbarIcon'
+import { Theme } from './theme'
 
 import Home from './pages/Home'
 import My from './pages/My'
 import FullScreenBg from './pages/FullScreenBg'
 
-export default function configNavigator({ colors }) {
-  const defaultStackOptions = {
+export default function configNavigator({ colors }: Theme) {
+  const defaultStackOptions: any = {
     headerBackTitle: 'Back',
     headerStyle: {
       height: STATUS_BAR_HEIGHT + HEADER_HEIGHT,

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { StatusBar } from 'react-native'
+import { StatusBar, StatusBarStyle } from 'react-native'
 
-const useStatusBar = (navigation, barStyle) => {
+const useStatusBar = (navigation: any, barStyle: StatusBarStyle) => {
   useEffect(() => {
     const onWillFocus = () => {
       StatusBar.setBarStyle(barStyle)

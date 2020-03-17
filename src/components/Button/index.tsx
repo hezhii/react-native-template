@@ -5,11 +5,20 @@ import {
   TouchableOpacity,
   Text,
   ActivityIndicator,
+  ViewStyle
 } from 'react-native'
 
 import useThemeContext from '../../hooks/useThemeContext'
 
-export default ({ children, onPress, style, disabled, loading }) => {
+interface Props {
+  children: React.ReactNode,
+  onPress?: () => void,
+  style?: ViewStyle,
+  disabled?: boolean,
+  loading?: boolean
+}
+
+export default React.memo(({ children, onPress, style, disabled, loading }: Props) => {
   const { theme } = useThemeContext()
   const unable = disabled || loading
 
@@ -35,7 +44,7 @@ export default ({ children, onPress, style, disabled, loading }) => {
       </View>
     </TouchableOpacity>
   )
-}
+})
 
 const styles = StyleSheet.create({
   button: {

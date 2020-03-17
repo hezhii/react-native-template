@@ -6,7 +6,7 @@ import { StyleSheet, View, Image } from 'react-native'
 
 import { IS_IOS } from '../../utils/device'
 
-export default props => {
+export default (props: any) => {
   return (
     <View style={styles.imgContainer}>
       <Image

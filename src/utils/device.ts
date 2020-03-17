@@ -3,7 +3,13 @@
  *
  * 设计稿基于 iPhone 6（375*667，2 倍图） 设计
  */
-import { Platform, Dimensions, PixelRatio, StatusBar } from 'react-native'
+import {
+  Platform,
+  Dimensions,
+  PixelRatio,
+  StatusBar,
+  ViewStyle,
+} from 'react-native'
 
 // iPhone X、iPhone XS
 const X_WIDTH = 375
@@ -30,15 +36,15 @@ export const IS_IPHONEX =
     (D_HEIGHT === XSMAX_HEIGHT && D_WIDTH === XSMAX_WIDTH) ||
     (D_HEIGHT === XSMAX_WIDTH && D_WIDTH === XSMAX_HEIGHT))
 
-export const ifiPhoneX = (iPhoneXStyle, regularStyle) =>
+export const ifiPhoneX = (iPhoneXStyle: ViewStyle, regularStyle: ViewStyle) =>
   IS_IPHONEX ? iPhoneXStyle : regularStyle
 
 // iphonex 顶部 44 ，底部 34
-export const STATUS_BAR_HEIGHT = IS_IOS
+export const STATUS_BAR_HEIGHT: number = IS_IOS
   ? IS_IPHONEX
     ? 44
     : 20
-  : StatusBar.currentHeight
+  : StatusBar.currentHeight || 0
 
 export const HEADER_HEIGHT = 44
 
@@ -53,7 +59,7 @@ const radio = D_WIDTH / UI_WIDTH
 const fontRadio = PixelRatio.getFontScale()
 
 // 大小转换
-export const scaleSize = size => Math.round(size * radio)
+export const scaleSize = (size: number) => Math.round(size * radio)
 
 // 字体转换
-export const scaleText = size => Math.round(size * radio * fontRadio)
+export const scaleText = (size: number) => Math.round(size * radio * fontRadio)
