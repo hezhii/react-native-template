@@ -25,6 +25,10 @@ const colors = {
 
   // border
   border_color_base: '#ddd',
+
+  // toast
+  toast_title: '#fff',
+  toast_content: '#eee',
 }
 
 export default {

@@ -22,6 +22,13 @@ const colors = {
   // button
   btn_bg: brandPrimary,
   btn_text: white,
+
+  // border
+  border_color_base: '#ddd',
+
+  // toast
+  toast_title: '#fff',
+  toast_content: '#eee',
 }
 
 export default {

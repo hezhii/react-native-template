@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { version } from '../package.json'
 import App from './App'
 import store from './models'
+import Portal from './components/Portal'
 import { ThemeContextProvider } from './theme'
 
 /**
@@ -17,7 +18,9 @@ function setup() {
   const Root = () => (
     <Provider store={store}>
       <ThemeContextProvider>
-        <App />
+        <Portal.Host>
+          <App />
+        </Portal.Host>
       </ThemeContextProvider>
     </Provider>
   )
