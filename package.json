@@ -1,49 +1,25 @@
 {
-  "name": "RNTemplate",
+  "name": "react-native-template-life",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ./src"
+  "description": "An react natieve project template to help us improve our development efficiency.",
+  "keywords": [
+    "react-native",
+    "typescript",
+    "template",
+    "efficiency"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hezhii/react-native-template.git"
   },
-  "dependencies": {
-    "@react-native-community/masked-view": "^0.1.5",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
-    "react-native-gesture-handler": "^1.5.3",
-    "react-native-reanimated": "^1.4.0",
-    "react-native-safe-area-context": "^0.6.2",
-    "react-native-screens": "^2.0.0-alpha.22",
-    "react-navigation": "^4.0.10",
-    "react-navigation-stack": "^2.0.13",
-    "react-navigation-tabs": "^2.7.0",
-    "react-redux": "^7.2.0",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+  "author": {
+    "name": "biu",
+    "email": "hezhou920@gmail.com",
+    "url": "https://www.whezh.com"
   },
-  "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/runtime": "^7.6.2",
-    "@react-native-community/eslint-config": "^0.0.5",
-    "@types/jest": "^25.1.4",
-    "@types/react": "^16.9.23",
-    "@types/react-native": "^0.61.22",
-    "@types/react-redux": "^7.1.7",
-    "@types/react-test-renderer": "^16.9.2",
-    "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
-    "babel-jest": "^24.9.0",
-    "eslint": "^6.5.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.56.0",
-    "react-test-renderer": "16.9.0",
-    "typescript": "^3.8.3"
+  "bugs": {
+    "url": "https://github.com/hezhii/react-native-template/issues"
   },
-  "jest": {
-    "preset": "react-native"
-  }
+  "homepage": "https://github.com/hezhii/react-native-template#readme",
+  "license": "MIT"
 }
