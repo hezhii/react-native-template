@@ -11,12 +11,14 @@ import { RootState } from '../../types/model'
 const Login = () => {
   const [username, setUsername] = useState<string>()
   const [password, setPassword] = useState<string>()
-  const loading = useSelector<RootState>(({ loading }) => loading.login)
+  const loading = useSelector<RootState, boolean | undefined>(
+    ({ loading }) => loading.login,
+  )
   const dispatch = useDispatch()
 
   const doLogin = useCallback(() => {
     if (!username || !password) {
-      Toast.show('Please input username and password')
+      Toast.fail('Please input username and password')
       return
     }
     dispatch(login({ username, password }))

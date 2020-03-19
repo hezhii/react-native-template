@@ -7,16 +7,24 @@ import {
   ActivityIndicator,
   Image,
 } from 'react-native'
+
 import useThemeContext from '../../hooks/useThemeContext'
+
+export type ToastType = 'info' | 'success' | 'fail' | 'loading'
 
 interface Props {
   title: string
-  type: string
+  type: ToastType
   content?: string
   duration?: number
   mask?: boolean
   onClose?: () => void
   onAnimationEnd?: () => void
+}
+
+const ICONS = {
+  success: require('../../assets/icons/success.png'),
+  fail: require('../../assets/icons/fail.png'),
 }
 
 const ToastContainer = memo((props: Props) => {
@@ -88,7 +96,7 @@ const ToastContainer = memo((props: Props) => {
   } else if (type === 'info') {
     iconDom = null
   } else {
-    // TODO: success/error icon
+    iconDom = <Image source={ICONS[type]} style={styles.icon} />
   }
 
   return (

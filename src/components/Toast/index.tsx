@@ -1,9 +1,9 @@
 import React from 'react'
 import Portal from '../Portal'
-import ToastContainer from './Container'
+import ToastContainer, { ToastType } from './Container'
 
 interface Options {
-  type: string
+  type: ToastType
   title: string
   content?: string
   duration?: number
@@ -21,6 +21,15 @@ export default {
   show(title: string, content?: string, duration?: number, mask?: boolean) {
     return notice({
       type: 'info',
+      title,
+      content,
+      duration,
+      mask,
+    })
+  },
+  fail(title: string, content?: string, duration?: number, mask?: boolean) {
+    return notice({
+      type: 'fail',
       title,
       content,
       duration,
