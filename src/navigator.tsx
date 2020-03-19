@@ -1,5 +1,5 @@
 import React from 'react'
-import { createAppContainer } from 'react-navigation'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import {
   createStackNavigator,
   CardStyleInterpolators,
@@ -12,11 +12,12 @@ import HeaderBackImage from './components/HeaderBackImage'
 import TabbarIcon from './components/TabbarIcon'
 import { Theme } from './theme'
 
+import Login from './pages/Auth/Login'
 import Home from './pages/Home'
 import My from './pages/My'
 import FullScreenBg from './pages/FullScreenBg'
 
-export default function configNavigator({ colors }: Theme) {
+export default function configNavigator({ colors }: Theme, isLoggedIn: boolean) {
   const defaultStackOptions: any = {
     headerBackTitle: 'Back',
     headerStyle: {
@@ -89,5 +90,23 @@ export default function configNavigator({ colors }: Theme) {
     },
   )
 
-  return createAppContainer(AppStack)
+  const AuthStack = createStackNavigator(
+    {
+      Login
+    },
+    {
+      defaultNavigationOptions: defaultStackOptions,
+      headerMode: 'float',
+    },
+  )
+
+  return createAppContainer(createSwitchNavigator(
+    {
+      Auth: AuthStack,
+      App: AppStack
+    },
+    {
+      initialRouteName: isLoggedIn ? 'App' : 'Auth'
+    }
+  ))
 }

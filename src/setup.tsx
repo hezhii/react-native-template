@@ -1,7 +1,9 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 
 import { version } from '../package.json'
 import App from './App'
+import store from './models'
 import { ThemeContextProvider } from './theme'
 
 /**
@@ -13,9 +15,11 @@ function setup() {
   // TODO: 全局的初始化操作，例如初始化 SDK
 
   const Root = () => (
-    <ThemeContextProvider>
-      <App />
-    </ThemeContextProvider>
+    <Provider store={store}>
+      <ThemeContextProvider>
+        <App />
+      </ThemeContextProvider>
+    </Provider>
   )
 
   return Root

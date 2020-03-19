@@ -22,6 +22,9 @@ const colors = {
   // button
   btn_bg: brandPrimary,
   btn_text: white,
+
+  // border
+  border_color_base: '#ddd',
 }
 
 export default {
