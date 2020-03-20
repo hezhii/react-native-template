@@ -5,8 +5,9 @@ import {
   CHANGE_LOGIN_STATUS,
   LoginAction,
 } from '../types/model'
-import { login as signIn } from '../services/api'
+import { login as signIn, SUCC_CODE } from '../services/api'
 import { changeLoading } from './loading'
+import { clearToken, saveToken } from '../services/storage'
 
 const initialState: LoginState = {
   status: 'fail',
@@ -20,12 +21,17 @@ export const login = (data: LoginData) => async (dispatch: Dispatch) => {
       type: CHANGE_LOGIN_STATUS,
       payload: res.code,
     })
+    if (res.code === SUCC_CODE) {
+      global.token = res.data
+      saveToken(res.data)
+    }
   } finally {
     dispatch(changeLoading('login', false))
   }
 }
 
 export const logout = (dispatch: Dispatch) => {
+  clearToken()
   dispatch({
     type: CHANGE_LOGIN_STATUS,
     payload: 'fail',

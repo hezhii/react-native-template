@@ -1,5 +1,6 @@
 import Toast from '../components/Toast'
 import { logout } from '../models/login'
+import { SUCC_CODE } from '../services/api'
 
 interface Options {
   method?: string
@@ -44,7 +45,7 @@ function parseReponse(dataType: string | undefined) {
 
 // 检查后台返回的结果
 function checkResponse(res: any) {
-  if (res.code === 'success') {
+  if (res.code === SUCC_CODE) {
     return res
   }
   const error: HttpError = new Error(res.msg)
