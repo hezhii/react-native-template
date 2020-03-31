@@ -2,14 +2,14 @@ import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 
 import useThemeContext from '../../hooks/useThemeContext'
-import useStatusBar from '../../hooks/useStatusBar'
 import Button from '../../components/Button'
+import useStatusBar from '../../hooks/useStatusBar'
 
 const Home = (props: any) => {
   const { navigation } = props
   const { themeName, theme, changeTheme } = useThemeContext()
+  useStatusBar('light-content')
 
-  useStatusBar(navigation, 'light-content')
   const onSwitchTheme = () => {
     if (themeName === 'default') {
       changeTheme('dark')

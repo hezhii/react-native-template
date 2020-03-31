@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, ImageBackground } from 'react-native'
-import { useHeaderHeight } from 'react-navigation-stack'
+import { useHeaderHeight } from '@react-navigation/stack'
 
 const FullScreenBg = () => {
   const headerHeight = useHeaderHeight()
@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-    marginTop: 64,
     fontSize: 20,
     fontWeight: '500',
   },
