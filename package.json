@@ -21,5 +21,9 @@
     "url": "https://github.com/hezhii/react-native-template/issues"
   },
   "homepage": "https://github.com/hezhii/react-native-template#readme",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "template/**/*",
+    "template.config.js"
+  ]
 }
