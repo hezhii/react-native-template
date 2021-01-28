@@ -1,6 +1,9 @@
 package com.rntemplate;
 
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
+import com.gyf.immersionbar.ImmersionBar;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +14,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "RNTemplate";
+  }
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // @see: https://github.com/gyf-dev/ImmersionBar
+    ImmersionBar.with(this).init();
   }
 }
