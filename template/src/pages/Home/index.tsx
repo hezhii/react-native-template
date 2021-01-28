@@ -23,9 +23,7 @@ const Home = (props: any) => {
       <Text style={[styles.title, { color: theme.colors.heading_color }]}>
         Happy Chinese New Year!
       </Text>
-      <Button
-        onPress={() => navigation.push('FullScreenBg')}
-        style={{ marginVertical: 24 }}>
+      <Button onPress={() => navigation.push('FullScreenBg')} style={{ marginVertical: 24 }}>
         Full screen background
       </Button>
       <Button onPress={onSwitchTheme}>

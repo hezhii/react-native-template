@@ -1,7 +1,7 @@
 /*
  * @Author: biu
  * @Date: 2020-01-09 15:59:05
- * @LastEditTime: 2020-03-31 16:18:18
+ * @LastEditTime: 2021-01-28 11:15:02
  * @Description: js 入口文件
  */
 import { AppRegistry } from 'react-native'

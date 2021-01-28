@@ -1,11 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
-import {
-  createStackNavigator,
-  CardStyleInterpolators,
-  HeaderStyleInterpolators,
-} from '@react-navigation/stack'
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { RootState } from './types/model'
@@ -39,9 +35,7 @@ function MainTabScreen() {
 
   const tabOptions = ({ route }: any) => {
     return {
-      tabBarIcon: (props: any) => (
-        <TabbarIcon {...props} routeName={route.name} />
-      ),
+      tabBarIcon: (props: any) => <TabbarIcon {...props} routeName={route.name} />,
     }
   }
 
@@ -110,7 +104,6 @@ export default function Navigator() {
     headerTitleAlign: 'center',
     headerPressColorAndroid: 'transparent', // 安卓点击返回按钮时的反馈颜色
     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS, // 切换时水平切换
-    headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
     cardStyle: {
       // TODO: Stack 嵌套 Tab 的情况下，tab 的背景色无法正常修改
       backgroundColor: colors.page_bg,

@@ -2,13 +2,17 @@ import React from 'react'
 import { StyleSheet, Text, ImageBackground } from 'react-native'
 import { useHeaderHeight } from '@react-navigation/stack'
 
+import useStatusBar from '../../hooks/useStatusBar'
+
 const FullScreenBg = () => {
   const headerHeight = useHeaderHeight()
+  useStatusBar('dark-content')
   return (
     <ImageBackground
       style={[styles.container, { paddingTop: headerHeight }]}
       source={require('../../assets/img/bg.jpg')}
-      resizeMode="cover">
+      resizeMode="cover"
+    >
       <Text style={styles.text}>I have a full screen background image</Text>
     </ImageBackground>
   )

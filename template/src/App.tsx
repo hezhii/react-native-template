@@ -20,23 +20,23 @@ const App = () => {
   const [initializing, setInitializing] = useState(true)
 
   // 加载缓存
-  const loadCache = () => {
-    const tokenPromise = getToken()
-      .then(token => {
-        global.token = token
-        // 如果 token 存在，则认为登录成功
-        store.dispatch({
-          type: CHANGE_LOGIN_STATUS,
-          payload: SUCC_CODE,
-        })
-      })
-      .catch(err => {
-        console.log('加载缓存 token 失败: ' + err.message)
-      })
-    return Promise.all([tokenPromise])
-  }
-
   useEffect(() => {
+    const loadCache = () => {
+      const tokenPromise = getToken()
+        .then(token => {
+          global.token = token
+          // 如果 token 存在，则认为登录成功
+          store.dispatch({
+            type: CHANGE_LOGIN_STATUS,
+            payload: SUCC_CODE,
+          })
+        })
+        .catch(err => {
+          console.log('加载缓存 token 失败: ' + err.message)
+        })
+      return Promise.all([tokenPromise])
+    }
+
     loadCache().finally(() => setInitializing(false))
   }, [])
 
