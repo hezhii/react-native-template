@@ -129,14 +129,14 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rntemplate"
+        applicationId "cn.com.newbest.rntemplate"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
         manifestPlaceholders = [
-                JPUSH_APPKEY : "f4cb2c05326dcc59840a025d",         //在此替换你的APPKey
+                JPUSH_APPKEY : "318c9ab0b9f18deb39a2598a",         //在此替换你的APPKey
                 JPUSH_CHANNEL: "default"        //在此替换你的channel
         ]
     }
@@ -149,21 +149,21 @@ android {
         }
     }
     signingConfigs {
-        debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+        release {
+            storeFile file('newbest7.jks')
+            storePassword 'lmxlmx'
+            keyAlias 'lmxlmx'
+            keyPassword 'lmxlmx'
         }
     }
     buildTypes {
         debug {
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
@@ -195,6 +195,8 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
 
     implementation project(':jcore-react-native')  // 添加 jcore 依赖
+    implementation 'com.huawei.hms:push:5.1.1.301'
+    implementation 'cn.jiguang.sdk.plugin:huawei:4.0.0'
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group: 'com.facebook.fbjni'
@@ -226,3 +228,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+apply plugin: 'com.huawei.agconnect'
