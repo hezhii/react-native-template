@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Provider } from 'react-redux'
+import JPush from 'jpush-react-native'
 
 import { version } from '../package.json'
 import Navigator from './Navigator'
@@ -9,6 +10,7 @@ import { ThemeContextProvider } from './theme'
 import { getToken } from './services/storage'
 import { CHANGE_LOGIN_STATUS } from './types/model'
 import { SUCC_CODE } from './services/api'
+import { IS_IOS } from './utils/device'
 
 /**
  * 定义全局变量
@@ -38,6 +40,24 @@ const App = () => {
     }
 
     loadCache().finally(() => setInitializing(false))
+  }, [])
+
+  useEffect(() => {
+    // 极光推送
+    if (__DEV__) {
+      JPush.setLoggerEnable(true)
+    }
+    JPush.init()
+    JPush.clearAllNotifications() // 打包 app 后清除所有通知
+
+    if (IS_IOS) {
+      JPush.setBadge({ badge: 0, appBadge: 0 }) // ios 打开 app 后清除角标
+    } else {
+      JPush.requestPermission() // @see JPush 文档
+    }
+
+    // TODO:
+    JPush.setAlias({ alias: 'test', sequence: 1 })
   }, [])
 
   if (initializing) {
