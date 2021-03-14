@@ -39,3 +39,11 @@ npx react-native init MyApp --template react-native-template-life
 修改 `AppDelegate.m` 文件。
 
 ![](doc/images/jiguang_ios.png)
+
+`[JPUSHService setupWithOption:launchOptions appKey:@"" channel:@"dev" apsForProduction:YES];` 
+
+## 高德定位
+
+1. 在高德开放平台中申请好应用的 key。
+2. Android：修改 `AndroidManifest.xml` 中 `com.amap.api.v2.apikey` 的值为申请的 key。
+3. iOS：修改 `Appdelegate.m` 中的 `[AMapServices sharedServices].apiKey = @"";` 改为申请的 key。

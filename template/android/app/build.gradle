@@ -194,6 +194,7 @@ dependencies {
 
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
 
+    implementation "com.amap.api:location:latest.integration"
     implementation project(':jcore-react-native')  // 添加 jcore 依赖
     implementation 'com.huawei.hms:push:5.1.1.301'
     implementation 'cn.jiguang.sdk.plugin:huawei:4.0.0'

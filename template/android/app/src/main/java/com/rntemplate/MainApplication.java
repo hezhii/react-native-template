@@ -8,6 +8,8 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.rntemplate.RNAmapGeolocation.RNAmapGeolocationPackage;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
+           packages.add(new RNAmapGeolocationPackage());
           return packages;
         }
 

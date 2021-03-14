@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 
 import useThemeContext from '../../hooks/useThemeContext'
 import Button from '../../components/Button'
 import useStatusBar from '../../hooks/useStatusBar'
+import { getCurrentLocation } from '../../components/RNAmapGeolocation'
 
 const Home = (props: any) => {
   const { navigation } = props
   const { themeName, theme, changeTheme } = useThemeContext()
   useStatusBar('light-content')
+
+  useEffect(() => {
+    getCurrentLocation().then((location: any) => {
+      if (__DEV__) {
+        console.log('UserLocation', location)
+      }
+    })
+  }, [])
 
   const onSwitchTheme = () => {
     if (themeName === 'default') {

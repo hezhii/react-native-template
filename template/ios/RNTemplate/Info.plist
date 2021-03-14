@@ -37,10 +37,15 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>访问您的位置已提供精确地服务</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>访问您的位置已提供精确地服务</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>访问您的位置已提供精确地服务</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

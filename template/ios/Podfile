@@ -8,6 +8,8 @@ target 'RNTemplate' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'AMapLocation'
+
   target 'RNTemplateTests' do
     inherit! :complete
     # Pods for testing
