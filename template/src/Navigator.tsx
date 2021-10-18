@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { RootState } from './types/model'
-import { STATUS_BAR_HEIGHT, HEADER_HEIGHT } from './utils/device'
 import useThemeContext from './hooks/useThemeContext'
 import HeaderBackImage from './components/HeaderBackImage'
 import TabbarIcon from './components/TabbarIcon'
@@ -80,13 +80,14 @@ const AppStack = createStackNavigator()
 
 export default function Navigator() {
   const loginStatus = useSelector<RootState>(state => state.login.status)
+  const insets = useSafeAreaInsets()
   const { theme } = useThemeContext()
   const { colors } = theme
 
   const stackOptions: any = {
     headerBackTitle: 'Back',
     headerStyle: {
-      height: STATUS_BAR_HEIGHT + HEADER_HEIGHT,
+      // height: insets.top + HEADER_HEIGHT,
       borderBottomWidth: 0,
       elevation: 0,
       shadowOpacity: 0,

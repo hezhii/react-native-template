@@ -7,44 +7,17 @@ import {
   Platform,
   Dimensions,
   PixelRatio,
-  StatusBar,
-  ViewStyle,
 } from 'react-native'
-
-// iPhone X、iPhone XS
-const X_WIDTH = 375
-const X_HEIGHT = 812
-
-// iPhone XR、iPhone XS Max
-const XSMAX_WIDTH = 414
-const XSMAX_HEIGHT = 896
 
 // UI 尺寸
 const UI_WIDTH = 375
 
 export const DEVICE_SIZE = Dimensions.get('window')
-const { height: D_HEIGHT, width: D_WIDTH } = DEVICE_SIZE
+const { width: D_WIDTH } = DEVICE_SIZE
 
 export const IS_IOS = Platform.OS === 'ios'
 
 export const IS_ANDROID = Platform.OS === 'android'
-
-export const IS_IPHONEX =
-  IS_IOS &&
-  ((D_HEIGHT === X_HEIGHT && D_WIDTH === X_WIDTH) ||
-    (D_HEIGHT === X_WIDTH && D_WIDTH === X_HEIGHT) ||
-    (D_HEIGHT === XSMAX_HEIGHT && D_WIDTH === XSMAX_WIDTH) ||
-    (D_HEIGHT === XSMAX_WIDTH && D_WIDTH === XSMAX_HEIGHT))
-
-export const ifiPhoneX = (iPhoneXStyle: ViewStyle, regularStyle: ViewStyle) =>
-  IS_IPHONEX ? iPhoneXStyle : regularStyle
-
-// iphonex 顶部 44 ，底部 34
-export const STATUS_BAR_HEIGHT: number = IS_IOS
-  ? IS_IPHONEX
-    ? 44
-    : 20
-  : StatusBar.currentHeight || 0
 
 export const HEADER_HEIGHT = 44
 

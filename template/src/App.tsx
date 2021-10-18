@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Provider } from 'react-redux'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import { version } from '../package.json'
 import Navigator from './Navigator'
@@ -47,9 +48,11 @@ const App = () => {
   return (
     <Provider store={store}>
       <ThemeContextProvider>
-        <Portal.Host>
-          <Navigator />
-        </Portal.Host>
+        <SafeAreaProvider>
+          <Portal.Host>
+            <Navigator />
+          </Portal.Host>
+        </SafeAreaProvider>
       </ThemeContextProvider>
     </Provider>
   )
