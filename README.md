@@ -19,6 +19,7 @@ npx react-native init MyApp --template react-native-template-life
 
 | React Native  	| Template  	|
 |---	            |---	        |
+| 0.66  	        | 0.4.*       |
 | 0.64  	        | 0.3.*       |
 | 0.63  	        | 0.2.*       |
 | 0.61  	        | 0.1.*       |

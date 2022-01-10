@@ -28,6 +28,8 @@ build/
 .gradle
 local.properties
 *.iml
+*.hprof
+app/release
 
 # Visual Studio Code
 #
