@@ -28,7 +28,7 @@ function checkStatus(response: any) {
 }
 
 function parseJSON(response: Response) {
-  return response.json()
+  return response.json().catch(() => null)
 }
 
 function parseText(response: Response) {
@@ -86,7 +86,7 @@ export default (url: string, options?: Options): Promise<any> => {
   }
   return Promise.race([
     fetch(url, newOptions),
-    new Promise(function(resolve, reject) {
+    new Promise(function (resolve, reject) {
       setTimeout(() => {
         const err: HttpError = new Error('Timeout')
         err.code = -1
